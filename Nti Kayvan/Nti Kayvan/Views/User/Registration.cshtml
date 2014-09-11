@@ -1,0 +1,49 @@
+﻿@model Nti_Kayvan.Models.UserModel
+
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    
+   @Html.ValidationSummary(true,"Creation failed, Check your info") 
+       <br/>
+    <br/> <br/>
+    <br/>
+    
+    
+    
+       <div class="row">
+        <div class="col-md-3">
+        <fieldset>
+           
+            <h2>Create a user</h2>            
+        <div class="editor-label">
+            @Html.LabelFor(u => u.Email)</div>
+            <div>
+                @Html.TextBoxFor(u => u.Email)
+                @Html.ValidationMessageFor(u=> u.Email)
+            </div>
+                <div>
+                      @Html.LabelFor(u => u.Password)</div>
+            
+            <div>@Html.PasswordFor(u => u.Password)
+                      @Html.ValidationMessageFor(u=> u.Password)</div>
+            <div>
+                      <div><input type="submit" value="Create User"/></div>
+                  </div>
+        </fieldset>
+        
+        </div>
+        
+
+    </div>
+    
+    
+    
+}
